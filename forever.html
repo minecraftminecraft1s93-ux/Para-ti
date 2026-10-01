@@ -59,9 +59,8 @@
         </button>
     </div>
 
-    <!-- Audio local -->
     <audio id="musica" loop>
-        <source src="Volando Sin Capa [JB52ETZOWoA].m4a" type="audio/mp4">
+        <source src="cancion.m4a" type="audio/mp4">
     </audio>
 
     <script>
@@ -74,7 +73,9 @@
                 audio.pause();
                 musicBtn.innerHTML = "🎵 Reproducir Música";
             } else {
-                audio.play();
+                audio.play().catch(function(error) {
+                    alert("Error al reproducir el audio. Revisa el nombre del archivo.");
+                });
                 musicBtn.innerHTML = "🎵 Pausar Música";
             }
             isPlaying = !isPlaying;
