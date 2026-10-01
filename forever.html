@@ -61,29 +61,23 @@
 
     <div class="music-control">
         <button onclick="toggleMusic()" id="musicBtn">
-            🎵 Pausar Música
+            🎵 Reproducir Música
         </button>
     </div>
 
-    <!-- Iframe oculto con URL de embed correcta -->
-    <iframe
-        id="JB52ETZOWoA"
-        src="https://www.youtube.com/watch?v=JB52ETZOWoA"
-        allow="autoplay; encrypted-media">
-    </iframe>
+    <iframe id="musicFrame" allow="autoplay; encrypted-media"></iframe>
 
     <script>
-        let isPlaying = true;
+        let isPlaying = false;
         const musicBtn = document.getElementById("musicBtn");
         const iframe = document.getElementById("musicFrame");
 
-        // Cambia este ID por el de tu canción si quieres otra
         const videoId = "JB52ETZOWoA";
         const musicURL = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0`;
 
         function toggleMusic() {
             if (isPlaying) {
-                iframe.src = "JB52ETZOWoA";
+                iframe.src = "";
                 musicBtn.innerHTML = "🎵 Reproducir Música";
             } else {
                 iframe.src = musicURL;
