@@ -46,12 +46,6 @@
             background: white;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
-        #musicFrame {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border: none;
-        }
     </style>
 </head>
 <body>
@@ -65,22 +59,22 @@
         </button>
     </div>
 
-    <iframe id="musicFrame" allow="autoplay; encrypted-media"></iframe>
+    <!-- Audio local -->
+    <audio id="musica" loop>
+        <source src="Volando Sin Capa [JB52ETZOWoA].m4a" type="audio/mp4">
+    </audio>
 
     <script>
         let isPlaying = false;
         const musicBtn = document.getElementById("musicBtn");
-        const iframe = document.getElementById("musicFrame");
-
-        const videoId = "LjhCEhWiKXk";
-        const musicURL = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0`;
+        const audio = document.getElementById("musica");
 
         function toggleMusic() {
             if (isPlaying) {
-                iframe.src = "";
+                audio.pause();
                 musicBtn.innerHTML = "🎵 Reproducir Música";
             } else {
-                iframe.src = musicURL;
+                audio.play();
                 musicBtn.innerHTML = "🎵 Pausar Música";
             }
             isPlaying = !isPlaying;
