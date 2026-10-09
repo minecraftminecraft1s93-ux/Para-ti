@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nunca me apartaré de tu lado</title>
+    <title>I'll never leave your side</title>
     <style>
         * {
             margin: 0;
@@ -50,12 +50,12 @@
 </head>
 <body>
     <div class="message">
-        Nunca me apartaré de tu lado ❤️
+       I'll never leave your side ❤️
     </div>
 
     <div class="music-control">
         <button onclick="toggleMusic()" id="musicBtn">
-            🎵 Reproducir Música
+            🎵 Play Music
         </button>
     </div>
 
@@ -71,12 +71,12 @@
         function toggleMusic() {
             if (isPlaying) {
                 audio.pause();
-                musicBtn.innerHTML = "🎵 Reproducir Música";
+                musicBtn.innerHTML = "🎵 Play Music";
             } else {
                 audio.play().catch(function(error) {
-                    alert("Error al reproducir el audio. Revisa el nombre del archivo.");
+                    alert("Could not play the music. Make sure the file cancion.m4a is in the same folder.");
                 });
-                musicBtn.innerHTML = "🎵 Pausar Música";
+                musicBtn.innerHTML = "🎵 Pause Music";
             }
             isPlaying = !isPlaying;
         }
